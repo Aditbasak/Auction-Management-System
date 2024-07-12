@@ -1,0 +1,3 @@
+SELECT DISTINCT a.product FROM auctions a INNER JOIN bid_log b ON a.auction_id = b.auction_id WHERE '" + label2.text + "' = b.bidder AND a.bid_end <= to_timestamp('" + + "', 'DD-MM-YYYY HH24:MI') AND b.bid_no = (SELECT MAX(bid_no) FROM bid_log WHERE auction_id = a.auction_id);
+
+     
